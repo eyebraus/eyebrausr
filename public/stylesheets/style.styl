@@ -1,0 +1,43 @@
+
+@import 'nib'
+
+/*
+ * Handy globals
+ */
+main-grid-side-margin = 10
+main-grid-top-margin = 10
+main-grid-bottom-margin = 5
+main-grid-division-margin = 2
+content-width = 100 - main-grid-side-margin * 2
+header-content-width = 50 - main-grid-division-margin
+
+/*
+ * Handy expressions
+ */
+main-grid-side-margin-pct = (main-grid-side-margin)%
+main-grid-top-margin-pct = (main-grid-top-margin)%
+main-grid-bottom-margin-pct = (main-grid-bottom-margin)%
+main-grid-division-margin-pct = (main-grid-division-margin)%
+content-width-pct = (content-width)%
+header-content-width-pct = (header-content-width)%
+
+.content
+    width content-width-pct
+    margin-left main-grid-side-margin-pct
+    margin-right main-grid-side-margin-pct
+    margin-bottom main-grid-division-margin-pct
+    float left
+    clear both
+
+    .header-section
+        width header-content-width-pct
+        height 100%
+        margin 0px (main-grid-division-margin / 2)%
+        text-align center
+        float left
+
+#content-header
+    margin-top main-grid-top-margin-pct
+
+#content-footer
+    margin-bottom main-grid-bottom-margin-pct

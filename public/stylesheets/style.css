@@ -1,8 +1,27 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*
+ * Handy globals
+ */
+/*
+ * Handy expressions
+ */
+.content {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2%;
+  float: left;
+  clear: both;
 }
-
-a {
-  color: #00B7FF;
+.content .header-section {
+  width: 48%;
+  height: 100%;
+  margin: 0px 1%;
+  text-align: center;
+  float: left;
+}
+#content-header {
+  margin-top: 10%;
+}
+#content-footer {
+  margin-bottom: 5%;
 }

@@ -1,0 +1,25 @@
+
+extend templates/page
+
+block content
+    #content-header.content
+        #eyebrausr-title.header-section
+            span eyebrausr
+        #site-nav.header-section
+            #blog-link.header-link
+                a(href='/ramblings') Blog
+            #resume-link.header-link
+                a(href='/resume') Resume
+            #projects-link.header-link
+                a(href='/projects') Project
+    #content-body.content
+        #bio-section.body-section
+            include includes/bio
+    #content-footer.content
+        #links.footer-section
+            #github.footer-link
+                a(href='#{links.github}') Github
+            #linkedin.footer-link
+                a(href='#{links.linkedin}') LinkedIn
+            #twitter.footer-link
+                a(href='#{links.twitter}') Twitter
