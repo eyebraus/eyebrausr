@@ -4,24 +4,54 @@
 /*
  * Handy expressions
  */
+body {
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+  position: absolute;
+}
 .content {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 2%;
-  float: left;
-  clear: both;
 }
-.content .header-section {
+#content-header {
+  top: 10%;
+  bottom: 20%;
+  height: 10%;
+  margin-top: 10%;
+}
+#content-header .header-section {
   width: 48%;
   height: 100%;
   margin: 0px 1%;
   text-align: center;
   float: left;
 }
-#content-header {
-  margin-top: 10%;
+#content-header #site-nav .header-link {
+  width: 31.333333333333336%;
+  height: 100%;
+  margin: 0px 1%;
+  text-align: center;
+  float: left;
+}
+#content-body {
+  height: 70%;
 }
 #content-footer {
-  margin-bottom: 5%;
+  height: 4%;
+  margin-bottom: 4%;
+}
+#content-footer .footer-section {
+  width: 48%;
+}
+#content-footer #links .footer-link {
+  width: 31.333333333333336%;
+  height: 100%;
+  margin: 0px 1%;
+  text-align: center;
+  float: left;
 }

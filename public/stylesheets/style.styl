@@ -6,10 +6,14 @@
  */
 main-grid-side-margin = 10
 main-grid-top-margin = 10
-main-grid-bottom-margin = 5
+main-grid-bottom-margin = 4
 main-grid-division-margin = 2
 content-width = 100 - main-grid-side-margin * 2
 header-content-width = 50 - main-grid-division-margin
+header-content-height = 10
+footer-content-width = 50 - main-grid-division-margin
+footer-content-height = 4
+body-content-height = 100 - header-content-height - footer-content-height - main-grid-top-margin - main-grid-division-margin - main-grid-bottom-margin
 
 /*
  * Handy expressions
@@ -20,14 +24,30 @@ main-grid-bottom-margin-pct = (main-grid-bottom-margin)%
 main-grid-division-margin-pct = (main-grid-division-margin)%
 content-width-pct = (content-width)%
 header-content-width-pct = (header-content-width)%
+header-content-height-pct = (header-content-height)%
+body-content-height-pct = (body-content-height)%
+footer-content-width-pct = (footer-content-width)%
+footer-content-height-pct = (footer-content-height)%
+
+body
+    top 0px
+    bottom 0px
+    left 0px
+    right 0px
+    margin 0px
+    position absolute
 
 .content
     width content-width-pct
     margin-left main-grid-side-margin-pct
     margin-right main-grid-side-margin-pct
     margin-bottom main-grid-division-margin-pct
-    float left
-    clear both
+
+#content-header
+    top main-grid-top-margin-pct
+    bottom (main-grid-top-margin + header-content-height)%
+    height header-content-height-pct
+    margin-top main-grid-top-margin-pct
 
     .header-section
         width header-content-width-pct
@@ -36,8 +56,28 @@ header-content-width-pct = (header-content-width)%
         text-align center
         float left
 
-#content-header
-    margin-top main-grid-top-margin-pct
+    #site-nav
+        .header-link
+            width (100 / 3 - 2)%
+            height 100%
+            margin 0px (main-grid-division-margin / 2)%
+            text-align center
+            float left
+
+#content-body
+    height body-content-height-pct
 
 #content-footer
+    height footer-content-height-pct
     margin-bottom main-grid-bottom-margin-pct
+
+    .footer-section
+        width footer-content-width-pct
+
+    #links
+        .footer-link
+            width (100 / 3 - 2)%
+            height 100%
+            margin 0px (main-grid-division-margin / 2)%
+            text-align center
+            float left
