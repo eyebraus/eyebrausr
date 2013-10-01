@@ -2,82 +2,102 @@
 @import 'nib'
 
 /*
- * Handy globals
+ * Fonts!
  */
-main-grid-side-margin = 10
-main-grid-top-margin = 10
-main-grid-bottom-margin = 4
-main-grid-division-margin = 2
-content-width = 100 - main-grid-side-margin * 2
-header-content-width = 50 - main-grid-division-margin
-header-content-height = 10
-footer-content-width = 50 - main-grid-division-margin
-footer-content-height = 4
-body-content-height = 100 - header-content-height - footer-content-height - main-grid-top-margin - main-grid-division-margin - main-grid-bottom-margin
+
+@font-face
+    font-family 'chunkfiveregular'
+    src url('fonts/Chunkfive-webfont.eot')
+    src url('fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Chunkfive-webfont.woff') format('woff'),
+        url('fonts/Chunkfive-webfont.ttf') format('truetype'),
+        url('fonts/Chunkfive-webfont.svg#chunkfiveregular') format('svg');
+    font-weight normal
+    font-style normal
 
 /*
- * Handy expressions
+ * Main color palette
  */
-main-grid-side-margin-pct = (main-grid-side-margin)%
-main-grid-top-margin-pct = (main-grid-top-margin)%
-main-grid-bottom-margin-pct = (main-grid-bottom-margin)%
-main-grid-division-margin-pct = (main-grid-division-margin)%
-content-width-pct = (content-width)%
-header-content-width-pct = (header-content-width)%
-header-content-height-pct = (header-content-height)%
-body-content-height-pct = (body-content-height)%
-footer-content-width-pct = (footer-content-width)%
-footer-content-height-pct = (footer-content-height)%
+
+primary_green = #49F000
+primary_orange = #FF9700
+background_creme = #FFFAF0
+foreground_brown = #3B2C00
+foreground_green = #133D00
+
+/*
+ * Useful constants
+ */
+
+header_title_font_size = 80
+header_title_font_size_px = (header_title_font_size)px
+header_title_margin_size = ((100 - header_title_font_size) / 2)
+header_title_margin_size_px = (header_title_margin_size)px
+
+header_link_font_size = 20
+header_link_font_size_px = (header_link_font_size)px
+header_link_margin_size = ((94 - header_link_font_size) / 2)
+header_link_margin_size_px = (header_link_margin_size)px
+
+/*
+ * Style mixins
+ */
+
+solid-circle-div(radius, bg_color)
+    -webkit-border-radius 999px
+    -moz-border-radius 999px
+    border-radius 999px
+    width radius
+    height radius
+    background bg_color
+
+outline-circle-div(radius, bg_color, border_thickness, border_color)
+    solid-circle-div(radius, bg_color)
+    border border_thickness solid border_color
 
 body
-    top 0px
-    bottom 0px
-    left 0px
-    right 0px
-    margin 0px
-    position absolute
-
-.content
-    width content-width-pct
-    margin-left main-grid-side-margin-pct
-    margin-right main-grid-side-margin-pct
-    margin-bottom main-grid-division-margin-pct
+    padding 40px 0
+    font-family Georgia
+    background background_creme
+    color foreground_brown
 
 #content-header
-    top main-grid-top-margin-pct
-    bottom (main-grid-top-margin + header-content-height)%
-    height header-content-height-pct
-    margin-top main-grid-top-margin-pct
-
     .header-section
-        width header-content-width-pct
-        height 100%
-        margin 0px (main-grid-division-margin / 2)%
+        font-family 'chunkfiveregular'
+        min-height 100px
+        margin-top 10px
+        margin-bottom 10px
         text-align center
-        float left
 
-    #site-nav
         .header-link
-            width (100 / 3 - 2)%
-            height 100%
-            margin 0px (main-grid-division-margin / 2)%
-            text-align center
+            outline-circle-div(94px, foreground_brown, 3px, primary_orange)
+            margin 0px auto
             float left
 
+            .header-link-stripe
+                height header_link_font_size_px
+                font-size header_link_font_size_px
+                margin header_link_margin_size_px 0px
+
+                a
+                    color background_creme
+                    text-decoration none
+
+    #eyebrausr-title
+        font-size header_title_font_size_px
+
+        .eyebrausr-text
+            margin-top header_link_margin_size_px
+            margin-bottom header_link_margin_size_px
+
+
 #content-body
-    height body-content-height-pct
+    height 800px
 
 #content-footer
-    height footer-content-height-pct
-    margin-bottom main-grid-bottom-margin-pct
-
     .footer-section
-        width footer-content-width-pct
+        text-align center
 
-    #links
         .footer-link
-            width (100 / 3 - 2)%
-            height 100%
-            margin 0px (main-grid-division-margin / 2)%
-            text-align center
+            width (100 / 3)%
             float left
