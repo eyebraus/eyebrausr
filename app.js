@@ -40,10 +40,21 @@ app.configure('development', function(){
 
 app.get('/', function(req, res) {
     res.render('index', {
-        links: {
-            github: 'https://github.com/eyebraus',
-            linkedin: 'http://www.linkedin.com/profile/view?id=165852416',
-            twitter: 'https://twitter.com/eyebraus'
+        nav: {
+            site: {
+                home: 'home',
+                about: 'about',
+                resume: '/resume',
+                projects: 'projects',
+                blog: 'blog'
+            },
+
+            footer: {
+                twitter: 'https://twitter.com/eyebraus',
+                gplus: 'https://plus.google.com/u/0/+SeanBrennanCodes',
+                linkedin: 'https://www.linkedin.com/profile/view?id=165852416',
+                email: 'mailto:whalesonstilts2012@gmail.com'
+            }
         }
     });
 });

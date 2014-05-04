@@ -1,0 +1,70 @@
+
+doctype html
+html(lang="en")
+    head
+        title eyebrausr
+        meta(charset="utf-8")
+        meta(name="author", content="eyebraus")
+
+        //- Fonts
+        link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Coustard:900")
+        link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Lato:300")
+
+        //- Stylesheets
+        link(rel="stylesheet", type="text/css", href="/css/skeleton/base.css")
+        link(rel="stylesheet", type="text/css", href="/css/skeleton/skeleton.css")
+        link(rel="stylesheet", type="text/css", href="/css/skeleton/layout.css")
+        link(rel="stylesheet", type="text/css", href="/css/style.css")
+
+        //- Icons, Favicons
+        link(rel="shortcut icon", href="/img/favicon.ico")
+
+    body.container
+        #app-header.header
+            .header-banner.six.columns.offset-by-one
+                a(href='#' + nav.site.home)
+                    h1 EYEBRAUSR
+
+            .header-nav.six.columns.offset-by-two
+                a(href='#' + nav.site.about)
+                    .nav-link About
+                a(href='' + nav.site.resume)
+                    .nav-link Resume
+                a(href='#' + nav.site.projects)
+                    .nav-link Projects
+                a(href='#' + nav.site.blog)
+                    .nav-link Blog
+
+        hr.header-body-split
+
+        #app-body.body
+            a.nav-anchor(name='' + nav.site.home)
+            #home.body-section.sixteen.columns.row
+
+            a.nav-anchor(name='' + nav.site.about)
+            #about.body-section.sixteen.columns.row
+                .six.columns.offset-by-one
+                    h3 Who is eyebraus?
+                    p
+                        | Hey there! My name's Sean Brennan, and I'm a software developer living across the lake from Seattle.
+                        | I graduated from the University of Rochester in 2013 with a B.S. in Computer Science.
+                        | I currently work as an SDET in Microsoft's Cloud + Enterprise division, as a member of the XAML Experiences team. 
+                    p
+                        | I'm passionate about data science, web development, and writing awesome code.
+                        | In my free time, I'm an on-again, off-again guitarist and amateur producer.
+                        | I love cute animals, weird music, good coffee, and tasty beer.
+                    p
+                        | Wanna learn more? Feel free to take a look at my resume, or shoot me an email!
+                    hr
+
+            a.nav-anchor(name='' + nav.site.projects)
+            
+            a.nav-anchor(name='' + nav.site.blog)
+
+        #app-footer.footer.sixteen.columns
+            .footer-nav.six.columns.offset-by-six
+                a.nav-link(href='' + nav.footer.github)  Github
+                a.nav-link(href='' + nav.footer.twitter)  Twitter
+                a.nav-link(href='' + nav.footer.gplus)    g+
+                a.nav-link(href='' + nav.footer.linkedin) LinkedIn
+                a.nav-link(href='' + nav.footer.email)    Email

@@ -1,0 +1,89 @@
+
+@import 'nib'
+
+/*
+ * Main color palette
+ */
+
+primary_orange = rgba(255, 113, 0, 1)
+secondary_orange = rgba(255, 147, 17, 1)
+border_grey = rgba(0, 0, 0, 0.5)
+text_grey = rgba(0, 0, 0, 0.9)
+
+/*
+ * Useful constants
+ */
+
+header_title_font_size = 80
+header_title_font_size_px = (header_title_font_size)px
+header_title_margin_size = ((100 - header_title_font_size) / 2)
+header_title_margin_size_px = (header_title_margin_size)px
+
+header_link_font_size = 20
+header_link_font_size_px = (header_link_font_size)px
+header_link_margin_size = ((94 - header_link_font_size) / 2)
+header_link_margin_size_px = (header_link_margin_size)px
+
+/*
+ * Style mixins
+ */
+
+solid-circle-div(radius, bg_color)
+    -webkit-border-radius 999px
+    -moz-border-radius 999px
+    border-radius 999px
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
+    width radius
+    height radius
+    background bg_color
+
+outline-circle-div(radius, bg_color, border_thickness, border_color)
+    solid-circle-div(radius, bg_color)
+    border border_thickness solid border_color
+
+/*
+ * End the preamble! Here are the actual page styles!
+ */
+
+body
+    color text_grey
+    font-family 'Lato'
+
+    .header
+        height 70px
+        position fixed
+        top 0px
+
+        a
+            text-decoration none
+        .header-banner, .header-nav
+            height 70px
+        .header-banner
+            float left
+        .header-banner h1
+            color primary_orange
+            font-family 'Coustard'
+            font-size 40px
+            padding 12px 0
+        .header-nav
+            float right
+        .nav-link
+            float left
+            font-size 18px
+            padding 26px 0px
+            text-align center
+            width 25%
+        .nav-link:hover
+            border-bottom 4px solid primary_orange
+            color primary_orange
+            padding 26px 0px 22px 0px
+
+    hr.header-body-split
+        margin 70px 0 0 0
+
+    .body
+        .body-section h3
+            color primary_orange
+            font-family 'Coustard'

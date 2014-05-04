@@ -1,0 +1,59 @@
+/*
+ * Main color palette
+ */
+/*
+ * Useful constants
+ */
+/*
+ * Style mixins
+ */
+/*
+ * End the preamble! Here are the actual page styles!
+ */
+body {
+  color: rgba(0,0,0,0.9);
+  font-family: 'Lato';
+}
+body .header {
+  height: 70px;
+  position: fixed;
+  top: 0px;
+}
+body .header a {
+  text-decoration: none;
+}
+body .header .header-banner,
+body .header .header-nav {
+  height: 70px;
+}
+body .header .header-banner {
+  float: left;
+}
+body .header .header-banner h1 {
+  color: #ff7100;
+  font-family: 'Coustard';
+  font-size: 40px;
+  padding: 12px 0;
+}
+body .header .header-nav {
+  float: right;
+}
+body .header .nav-link {
+  float: left;
+  font-size: 18px;
+  padding: 26px 0px;
+  text-align: center;
+  width: 25%;
+}
+body .header .nav-link:hover {
+  border-bottom: 4px solid #ff7100;
+  color: #ff7100;
+  padding: 26px 0px 22px 0px;
+}
+body hr.header-body-split {
+  margin: 70px 0 0 0;
+}
+body .body .body-section h3 {
+  color: #ff7100;
+  font-family: 'Coustard';
+}
